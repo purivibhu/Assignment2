@@ -4,13 +4,24 @@
 
 {% block content %}
     <h2>Student List</h2>
+    
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'student_list' %}">
+        <input id="search_bar" type="text" name="q" placeholder="Search by name" value="{{ request.GET.q }}">
+        <button type="submit">Search</button>
+    </form>
+    
     <ul class="student-list">
         {% for student in students %}
             <li>
                 <span>{{ student.first_name }} {{ student.last_name }}</span>
                 <a href="{% url 'student_edit' student.id %}" class="button edit-button">Edit</a>
             </li>
+        {% empty %}
+            <li>No students found.</li>
         {% endfor %}
     </ul>
+    
     <a href="{% url 'student_create' %}" class="button">Add a new student</a>
 {% endblock %}
+

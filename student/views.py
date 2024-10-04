@@ -7,7 +7,16 @@ from django.contrib.auth.decorators import login_required
 # View to display list of all students
 @login_required
 def student_list(request):
-    students = Student.objects.all()
+    query = request.GET.get('q')  # Get the search query from the request
+    if query:
+        students = Student.objects.filter(
+            first_name__icontains=query  # Filter by first name
+        ) | Student.objects.filter(
+            last_name__icontains=query  # Filter by last name
+        )
+    else:
+        students = Student.objects.all()  # Show all students if no query
+
     return render(request, 'students/student_list.html', {'students': students})
 
 # View to display details of a single student

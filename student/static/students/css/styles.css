@@ -94,6 +94,10 @@ form {
     gap: 15px;
 }
 
+#search_bar{
+    width:auto;
+}
+
 form input[type="text"],
 form input[type="password"],
 form input[type="email"],
