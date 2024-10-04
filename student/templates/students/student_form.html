@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ form.instance.id|yesno:"Edit Student,Add New Student" }}{% endblock %}
+
+{% block content %}
+    <h2>{{ form.instance.id|yesno:"Edit Student,Add New Student" }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{{ form.instance.id|yesno:"Update,Create" }}</button>
+    </form>
+    <a href="{% url 'student_list' %}" class="button">Cancel</a>
+{% endblock %}
