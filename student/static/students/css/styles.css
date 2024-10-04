@@ -133,3 +133,31 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+
+input[type="date"] {
+    padding: 10px;                        /* Padding for better touch targets */
+    border: 1px solid #555;               /* Darker border color */
+    border-radius: 5px;                   /* Rounded corners */
+    background-color: #333;               /* Dark background */
+    color: #e0e0e0;                       /* Light text color */
+    font-size: 1em;                       /* Font size */
+    width: 100%;                          /* Full width */
+    transition: border-color 0.3s;        /* Transition for border color */
+}
+
+/* Change border color on focus */
+input[type="date"]:focus {
+    border-color: #4CAF50;                /* Highlight border on focus */
+    outline: none;                        /* Remove default outline */
+}
+
+/* Style for error messages */
+input[type="date"].error {
+    border-color: #ff5722;                /* Red border for error */
+}
+
+/* Optional: Add a placeholder styling */
+input[type="date"]::placeholder {
+    color: #777;                          /* Light grey placeholder color */
+}
