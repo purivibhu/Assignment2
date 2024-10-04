@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Student
 from .forms import StudentForm
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from django.core.paginator import Paginator
 
 
 # View to display list of all students
@@ -17,7 +19,12 @@ def student_list(request):
     else:
         students = Student.objects.all()  # Show all students if no query
 
-    return render(request, 'students/student_list.html', {'students': students})
+    # Set up pagination
+    paginator = Paginator(students, 5)  # Show 5 students per page
+    page_number = request.GET.get('page')  # Get the page number from the request
+    page_obj = paginator.get_page(page_number)  # Get the page object
+
+    return render(request, 'students/student_list.html', {'page_obj': page_obj})
 
 # View to display details of a single student
 @login_required

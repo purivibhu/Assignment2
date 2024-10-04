@@ -94,6 +94,34 @@ form {
     gap: 15px;
 }
 
+.pagination {
+    margin-top: 20px;
+}
+
+.page_buttons_div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.pagination a {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #007bff;  /* Bootstrap primary color */
+}
+
+.pagination a:hover {
+    background-color: #007bff;  /* Bootstrap primary color */
+    color: white;
+}
+
+.pagination span {
+    margin-right: 10px;
+}
+
 #search_bar{
     width:auto;
 }
