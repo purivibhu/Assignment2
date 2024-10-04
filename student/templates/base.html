@@ -10,6 +10,16 @@
 <body>
     <header>
         <h1>Student Management System</h1>
+
+        <!-- Logout Button -->
+        {% if user.is_authenticated %}
+          <div class="logout-button-container">
+              <form action="{% url 'logout' %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="logout-button">Logout</button>
+              </form>
+          </div>
+        {%endif%}
     </header>
 
     <main>

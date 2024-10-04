@@ -17,7 +17,7 @@ header {
 }
 
 main {
-    margin: 20px auto;
+    margin: 60px auto;
     width: 80%;
     max-width: 1200px;
     background-color: #1e1e1e;  /* Dark background for content */
@@ -95,6 +95,7 @@ form {
 }
 
 form input[type="text"],
+form input[type="password"],
 form input[type="email"],
 form input[type="number"],
 form textarea {
@@ -132,6 +133,28 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.logout-button-container {
+    float: right;
+    width:10%;
+    text-align: right;
+    margin: 30px;
+}
+
+.logout-button {
+    background-color: #ff4d4d; /* Darker red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #ff3333; /* Even darker red on hover */
 }
 
 
