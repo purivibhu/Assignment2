@@ -34,35 +34,6 @@ Use the following credentials to log in:
     Username: test
     Password: test123
 
-**File Structure**
-
-student_management/
-│
-├── student/
-│   ├── migrations/
-│   ├── templates/
-│   │   └── students/
-│   │       ├── student_list.html
-│   │       ├── student_detail.html
-│   │       ├── student_form.html
-│   │       └── student_confirm_delete.html
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── tests.py
-│   └── views.py
-│
-├── student_management/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-│
-├── manage.py
-└── db.sqlite3
-
 **Usage**
 - Adding a Student: Click on the "Add a new student" button on the student list page, fill in the required fields, and submit the form.
 -Editing a Student: Click on the "Edit" button next to a student's name to modify their information.
